@@ -25,9 +25,9 @@ class CashRegister
     if @discount > 0
       @apply_discount = (price * discount)/100
       @total -= @apply_discount
-      return "After the discount, the total comes to $#{total}."
+      return "With your employee discount, the total is $#{total}."
     else
-      return "There is no discount to apply."
+      return "There is no applicable employee discount."
     end
   end
 
