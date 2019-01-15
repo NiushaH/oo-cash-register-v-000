@@ -1,31 +1,37 @@
 class CashRegister
-  attr_accessor :total, :employee_discount, :discount
+  attr_accessor :total, :discount, :items, :price
 
   def initialize(total = 0)
-    @total = total
+    @total = 0
+    @discount = discount
+    @items = []
   end
   
-  def total(employee_discount)
-    employee_discount = self.total
-    self.total += 20
+  def add_item(item, price, quantity = 1)
+    @price = price
+    @total += price * quantity
+       if quantity > 1
+      counter = 0
+      while counter < quantity
+        @items << item
+        counter += 1
+      end
+    else
+      @items << item
+    end
   end
 
-  # def add_item
-
-  # end
-
-  # def apply_discount
-
-  # end
+  def apply_discount(discount)
+    @discount += self.total
+  end
   
-  # def item
+  def items
 
-  # end  
+  end
   
-  # def void_last_transaction
+  def void_last_transaction
 
-  # end
+  end
   
 end  
-
 
